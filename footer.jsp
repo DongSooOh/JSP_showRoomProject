@@ -4,9 +4,18 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>ShowRoom_footer</title>
+		<title>Store_footer</title>
+		<style>
+			.footer {
+				padding: 10px;
+				margin: 10px;
+				text-align:center;
+				background-color: black;
+				color:white;
+			}
+		</style>
 	</head>
 	<body>
-		<h6> ⓒ2024 DongSoo, ShowRoom.</h6>
+		<p class="footer"> ⓒ 2024 DongSoo, Store.</p>
 	</body>
 </html>

@@ -5,8 +5,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-		<title>Welcome to ShowRoom</title>
+		<title>Welcome to Store</title>
 		<style>
 			.container1-2 {
 				padding: 10px;
@@ -20,6 +19,7 @@
 			.container2 {
 				padding: 10px;
 				margin: 10px;
+				height: 75px;
 				text-align:center;
 				background-color: black;
 				color:white;
@@ -30,21 +30,23 @@
 		<div class="container1">
 			<div class="container1-1">
 				<!-- 머리글 -->
-				<%@ include file="menu.jsp"%>
+				<%@ include file="header.jsp"%>
 			</div>
 		<%!
-			String greeting = "쇼룸에 방문하신 것을 환영합니다.";
-			String tagline = "Welcome to ShowRoom!";
+			String greeting = "매장에 방문하신 것을 환영합니다.";
+			String tagline = "Welcome to Store!";
 		%>
 		<!-- 본문 -->
 		<div class="container1-2">
 			<h1><%=greeting%></h1>
-			<img src="<%= request.getContextPath() %>/images/show.jpg" alt="쇼룸">
-			<p>ShowRoom</p>
+			<img src="<%= request.getContextPath() %>/images/show.jpg" alt="매장">
+			<p></p>
+			<p><b>STORE</b></p>
 		</div>
 	</div>
 	<div class="container2">
-		<%
+		<p></p>
+		<%		
 			Date day = new java.util.Date();
 			String am_pm;
 			int hour = day.getHours();
@@ -60,8 +62,8 @@
 			String CT = am_pm + " " + hour + ":" + minute + ":" + second;
 			out.println("현재 접속 시각: " + CT + "\n");
 		%>
-	<!-- 바닥글 -->
-	<%@ include file="footer.jsp"%>
 	</div>
+	<!-- 바닥글 -->
+	<%@ include file="footer.jsp"%>	
 </body>
 </html>
