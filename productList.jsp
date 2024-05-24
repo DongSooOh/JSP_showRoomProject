@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8" import="java.util.ArrayList, store.Product" %>
-<jsp:useBean id="prodBean" class="store.ProductRepository" scope="session" />
+    pageEncoding="UTF-8" import="java.util.ArrayList, store.Product, store.ProductRepository" %>
+<!-- <jsp:useBean id="prodBean" class="store.ProductRepository" scope="session" /> -->
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -28,23 +29,22 @@
 				<h5>ProductList</h5>
 			</div>
 			<%
-				ArrayList<Product> prodList1 = prodBean.getAllProducts(1);
+				ProductRepository store = ProductRepository.getInstance();
+				ArrayList<Product> prodList = store.getAllProducts();
 			%>
 			<div class="grid text-center">
 				<%
-					for (int j = 1; j <= 3; j++) {
-						ArrayList<Product> prodList = prodBean.getAllProducts(j);
-						for (int i = 0; i < prodList.size(); i++) {
-							Product prod = prodList.get(i);
+					for (int i = 0; i < prodList.size(); i++) {
+						Product prod = prodList.get(i);
 				%>			
   				<div class="g-col-6 g-col-md-4">
   					<h5><b><%= prod.getName() %></b></h5>
   					<img src="<%= prod.getImageUrl() %>" alt="<%= prod.getName() %>" class="img-fluid">
   					<p><%= prod.getDescription() %></p>
   					<p><%= prod.getPrice() %> 원</p>
+  					<p><a href="./product.jsp?prodId=<%=prod.getProdId() %>" class="btn btn-secondary" role="button">상세 정보</a>
   				</div>
   				<%
-						}
 					}
   				%>
 			</div>

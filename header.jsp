@@ -10,7 +10,7 @@
 	<body>
 		<nav class="navbar navbar-expand-lg bg-body-tertiary">
   			<div class="container-fluid">
-    			<a class="navbar-brand" href="#"><img src="<%= request.getContextPath() %>/images/home.jpg" alt="집">Home</a>
+    			<a class="navbar-brand" href="welcome.jsp"><img src="<%= request.getContextPath() %>/images/home.jpg" alt="집">Home</a>
     			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
     	  			<span class="navbar-toggler-icon"></span>
     			</button>
@@ -21,13 +21,13 @@
             					PRODUCT
           					</a>
           					<ul class="dropdown-menu">
-            					<li><a class="dropdown-item" href="#">All items</a></li>
+            					<li><a class="dropdown-item" href="productList.jsp" id="store">All items</a></li>
             					<li><a class="dropdown-item" href="#">New items</a></li>
             					<li><a class="dropdown-item" href="#">Other</a></li>
           					</ul>
         				</li>
         				<li class="nav-item">
-          					<a class="nav-link active" aria-current="page" href="#">JOURNAL</a>
+          					<a class="nav-link active" aria-current="page" href="addProduct.jsp">ADDITION</a>
         				</li>
         				<li class="nav-item">
           					<a class="nav-link" href="#">ABOUT</a>
