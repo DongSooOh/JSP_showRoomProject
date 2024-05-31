@@ -17,9 +17,8 @@
 		<title>제품 등록</title>
 	</head>
 	<body>
-		<div class="container py-4">
-			<%@ include file="header.jsp" %>
-			
+		<%@ include file="header.jsp" %>
+		<div class="container py-4">			
 			<div class="p-5 mb-4 bg-body-tertiary rounded-3">
 				<div class="container-fluid py-5">
 					<h1 class="display-5 fw-bold">제품 등록</h1>
@@ -76,7 +75,7 @@
 					</div>
 				</form>
 			</div>
-			<jsp:include page="footer.jsp" />
 		</div>
+		<jsp:include page="footer.jsp" />
 	</body>
 </html>
