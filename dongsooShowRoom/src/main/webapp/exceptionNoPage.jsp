@@ -5,7 +5,7 @@
 	<head>
 		<link rel="stylesheet" href="./resources/css/bootstrap.min.css" />
 		<meta charset="UTF-8">
-		<title>Page_Error</title>
+		<title>에러 페이지</title>
 	</head>
 	<body>
 		<jsp:include page="header.jsp" />

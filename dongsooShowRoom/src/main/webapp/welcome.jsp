@@ -24,7 +24,7 @@
 				margin: 10px;
 				padding: 10px;
 				background-color: black;
-				color:white;
+				color:white; 
 			}
 		</style>
 	</head>

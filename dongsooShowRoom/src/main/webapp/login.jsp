@@ -8,9 +8,8 @@
 		<title>Store Login</title>
 	</head>
 	<body>
-		<div class="container py-4">
-			<%@ include file="header.jsp"%>
-			
+		<%@ include file="header.jsp"%>
+		<div class="container py-4">			
 			<div class="p-5 mb-4 bg-body-tertiary rounded-3">
 				<div class="container-fluid py-5">
 					<h1 class="display-5 fw-bold">로그인</h1>
@@ -44,7 +43,7 @@
 					</div>
 				</div>
 			</div>
-			<%@ include file="footer.jsp" %>
 		</div>
+		<%@ include file="footer.jsp" %>
 	</body>
 </html>

@@ -9,6 +9,15 @@
 		<meta charset="UTF-8">
 		<link rel="stylesheet" href="./resources/css/bootstrap.min.css" />
 		<title>Product</title>
+		<script type="text/javascript">
+			function addToCart() {
+				if (confirm("제품을 장바구니에 추가하시겠습니까?")) {
+					document.addForm.submit();
+				} else {
+					document.addForm.reset();
+				}
+			}
+		</script>
 		<style>
 			.info-box {
 				padding:10px;
@@ -47,12 +56,15 @@
 				<div class="prod-box col-md-12">
 					<h3><b><%= prod.getName() %></b></h3>
 					<p><%= prod.getDescription() %></p>
-					<p><b>제품 코드: </b><span class="badge text-bg-danger"><%= prod.getProdId() %></span></p>
-					<p>분류: <%= prod.getCategory() %></p>
-					<p>재고 수: <%= prod.getInstock() %></p>
-					<p>가격: <%= prod.getPrice() %></p>
-					<p><a href="#" class="btn btn-info">제품 주문</a></p>
-					<a href="productList.jsp" class="btn btn-secondary">제품 목록</a>
+					<p> <b>제품 코드</b>: <span class="badge text-bg-danger"><%= prod.getProdId() %></span></p>
+					<p> <b>분류 </b>:<%= prod.getCategory() %></p>
+					<p> <b>재고 수</b>: <%= prod.getInstock() %></p>
+					<p> <b>가격</b>: <%= prod.getPrice() %> 원</p>
+					<form name="addForm" action="./addCart.jsp?prodId=<%=prod.getProdId()%>" method="post">
+						<a href="#" class="btn btn-info" onclick="addToCart()">제품 주문</a>
+						<a href="./cart.jsp" class="btn btn-warning">장바구니</a>
+						<a href="productList.jsp" class="btn btn-secondary">제품 목록</a>
+					</form>
 				</div>
 			</div>
 		</div>

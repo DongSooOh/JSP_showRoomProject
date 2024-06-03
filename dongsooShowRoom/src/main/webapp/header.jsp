@@ -10,7 +10,7 @@
 	<body>
 		<nav class="navbar navbar-expand-lg bg-body-tertiary">
   			<div class="container-fluid">
-    			<a class="navbar-brand" href="welcome.jsp"><img src="<%= request.getContextPath() %>/image/home.jpg" alt="집">Home</a>
+    			<a class="navbar-brand" href="welcome.jsp"><img src="<%= request.getContextPath() %>/image/home.jpg" alt="집"></a>
     			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
     	  			<span class="navbar-toggler-icon"></span>
     			</button>
@@ -39,6 +39,7 @@
     			</div>
 				<nav class="navbar bg-body-tertiary">
   					<div class="container-fluid">
+  						<a class="cart" href="cart.jsp"><img src="<%= request.getContextPath() %>/image/cart.jpg" alt="장바구니"></a>
     					<a class="navbar-brand"></a>
     					<form class="d-flex" role="search">
       						<input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
