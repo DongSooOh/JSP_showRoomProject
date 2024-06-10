@@ -18,22 +18,21 @@
       				<ul class="navbar-nav">
       					<li class="nav-item dropdown">
           					<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            					PRODUCT
+            					제품 보기
           					</a>
           					<ul class="dropdown-menu">
-            					<li><a class="dropdown-item" href="productList.jsp" id="store">All items</a></li>
-            					<li><a class="dropdown-item" href="#">New items</a></li>
-            					<li><a class="dropdown-item" href="#">Other</a></li>
+            					<li><a class="dropdown-item" href="productList.jsp" id="store">전체보기</a></li>
+            					<li><a class="dropdown-item" href="#">신상품</a></li>
           					</ul>
         				</li>
         				<li class="nav-item">
-          					<a class="nav-link active" aria-current="page" href="addProduct.jsp">ADDITION</a>
+          					<a class="nav-link active" aria-current="page" href="addProduct.jsp">제품 등록</a>
         				</li>
         				<li class="nav-item">
-          					<a class="nav-link" href="#">ABOUT</a>
+          					<a class="nav-link" href="./editProduct.jsp?edit=update">제품 수정</a>
         				</li>
         				<li class="nav-item">
-          					<a class="nav-link" href="#">STORE</a>
+          					<a class="nav-link" href="./editProduct.jsp?edit=delete">제품 삭제</a>
         				</li>
       				</ul>
     			</div>

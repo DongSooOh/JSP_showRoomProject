@@ -10,7 +10,7 @@
 				padding: 10px;
 				margin: 10px;
 				text-align:center;
-				background-color: black;
+				background-color: #ccc;
 				color:white;
 			}
 		</style>

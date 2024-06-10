@@ -8,7 +8,7 @@ public class Product implements Serializable {
 	private String prodId;		// 제품 코드 ID
 	private String name;		// 제품명
 	private int price;			// 가격
-	private String description;	// 설명
+	private String description;	// 상세정보
 	private String category;	// 분류
 	private int instock;		// 재고 수
 	private String filename;	// 이미지 파일명

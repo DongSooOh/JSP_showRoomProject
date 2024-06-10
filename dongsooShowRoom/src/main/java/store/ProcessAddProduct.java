@@ -4,6 +4,10 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.StandardCopyOption;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
@@ -24,7 +28,23 @@ public class ProcessAddProduct extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("utf-8");
-
+        
+        Connection conn = null;
+		
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			String url = "jdbc:mysql://localhost:3306/jspdb";
+			String user = "root";
+			String password = "1234";
+			conn = DriverManager.getConnection(url, user, password);
+		} catch (ClassNotFoundException ex) {
+			System.out.println("JDBC 드라이버를 찾을 수 없습니다.");
+			ex.printStackTrace();
+		} catch (SQLException ex) {
+			System.out.println("데이터베이스 연결에 실패했습니다.");
+			System.out.println("SQLException: " + ex.getMessage());
+		}
+		
         // 폼 데이터 가져오기
         String prodId = request.getParameter("prodId");
         String name = request.getParameter("name");

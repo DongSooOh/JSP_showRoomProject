@@ -2,6 +2,7 @@
     pageEncoding="UTF-8" isELIgnored="false" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ include file="dbconn.jsp" %>
 
 <c:set var="contextPath" value="${pageContext.request.contextPath}" />
 
@@ -28,7 +29,7 @@
 			</div>
 			
 			<div class="row align-items-md-stretch">
-				<form name="newProd" action="${contextPath}/processAddProduct.do" method="post" enctype="multipart/form-data">
+				<form name="newProd" action="./processAddProduct.jsp" method="post" enctype="multipart/form-data">
 					<div class="mb-3 row">
 						<label class="col-sm-2">제품 코드</label>
 						<div class="col-sm-3">
@@ -49,14 +50,18 @@
 					</div>
 					<div class="mb-3 row">
 						<label class="col-sm-2">설명</label>
-						<div class="col-sm-3">
-							<input type="text" id="description" name="description" class="form-control">
+						<div class="col-sm-6">
+							<textarea id="description" name="description" cols="50" rows="2" class="form-control" placeholder="100자 미만으로 작성하십시오."></textarea>
 						</div>
 					</div>
 					<div class="mb-3 row">
 						<label class="col-sm-2">분류</label>
 						<div class="col-sm-3">
-							<input type="text" name="category" class="form-control">
+							<select name="category" class="form-control">
+								<option value="가방">가방</option>
+								<option value="신발">신발</option>
+								<option value="의류">의류</option>
+							</select>	
 						</div>
 					</div>
 					<div class="mb-3 row">

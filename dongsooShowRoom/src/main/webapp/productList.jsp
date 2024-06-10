@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8" import="java.util.ArrayList, store.Product, store.ProductRepository" %>
+    pageEncoding="UTF-8" import="java.sql.*, store.Product, store.ProductRepository" %>
 <!-- <jsp:useBean id="prodBean" class="store.ProductRepository" scope="session" /> -->
 
 <!DOCTYPE html>
@@ -29,24 +29,33 @@
 				<h1>제품 목록</h1>
 				<h5>ProductList</h5>
 			</div>
-			<%
-				ProductRepository store = ProductRepository.getInstance();
-				ArrayList<Product> prodList = store.getAllProducts();
-			%>
+			
+			<%@ include file="dbconn.jsp" %>
+			
 			<div class="grid text-center">
 				<%
-					for (int i = 0; i < prodList.size(); i++) {
-						Product prod = prodList.get(i);
-				%>			
+					PreparedStatement pstmt = null;
+					ResultSet rs = null;
+					String sql = "SELECT * FROM product";
+					pstmt = conn.prepareStatement(sql);
+					rs = pstmt.executeQuery();
+					while (rs.next()) {
+				%>		
   				<div class="g-col-6 g-col-md-4">
-  					<img src="./resources/images/<%=prod.getFilename() %>" style="width:250; height: 350" />
-  					<h5><b><%= prod.getName() %></b></h5>
-  					<p><%= prod.getDescription() %></p>
-  					<p><%= prod.getPrice() %> 원</p>
-  					<p><a href="./product.jsp?prodId=<%=prod.getProdId() %>" class="btn btn-secondary" role="button">상세 정보</a>
+  					<img src="./resources/images/<%=rs.getString("p_filename")%>" style="width:250; height: 350" />
+  					<h5><b><%=rs.getString("p_name")%></b></h5>
+  					<p><%=rs.getString("p_description")%></p>
+  					<p><%=rs.getString("p_price")%> 원</p>
+  					<p><a href="./product.jsp?prodId=<%=rs.getString("p_id")%>" class="btn btn-secondary" role="button">상세 정보</a>
   				</div>
   				<%
 					}
+					if (rs != null)
+						rs.close();
+					if (pstmt != null)
+						pstmt.close();
+					if (conn != null)
+						conn.close();
   				%>
 			</div>
 			<%@ include file="footer.jsp"%>
