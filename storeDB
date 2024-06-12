@@ -1,0 +1,52 @@
+#2024-06-04---------------------------------------------------------------------------------------------------------
+create database jspdb;
+
+create table member
+(
+	id varchar(10) primary key not null,
+	password varchar(10) not null,
+	name varchar(10) not null,
+	gender varchar(10),
+	birth varchar(10),
+    mail varchar(30),
+    phone varchar(20),
+    address varchar(90),
+    regist_day varchar(50)
+) default charset=utf8;
+
+select * from member;
+
+delete from member where id="1q2w3e";
+
+drop table member;
+
+insert into member (id, passwd, name)
+values(1, 1234, '오동수')
+	, (2, 123, '김자바');
+
+create table if not exists product(
+	prodId varchar(20) primary key not null,
+	name varchar(20),
+	price int,
+	description text,
+	category varchar(20),
+	instock int,
+	filename varchar(255)
+) default charset=utf8;
+
+select * from product;
+
+drop table product;
+
+insert into product(prodId, name, price, description, category, instock, filename)
+values("PROD1111", "백팩1", 100000, "등으로 지는 양 어깨에 메는 가방", "가방", 1000, "backpack.jpg"),
+	("PROD2222", "숄더백1", 80000, "긴 끈이 달려서 한쪽 어깨에 메는 작은 가방", "가방", 1500, "shoulderbag.jpg"),
+    ("PROD3333", "핸드백1", 50000, "손에 들고 다니는 정도의 사이즈의 가방", "가방", 2000, "handbag.jpg"),
+    ("PROD4444", "백팩2", 100000, "등으로 지는 양 어깨에 메는 가방", "가방", 1000, "backpack.jpg"),
+	("PROD5555", "숄더백2", 80000, "긴 끈이 달려서 한쪽 어깨에 메는 작은 가방", "가방", 1500, "shoulderbag.jpg"),
+    ("PROD6666", "핸드백2", 50000, "손에 들고 다니는 정도의 사이즈의 가방", "가방", 2000, "handbag.jpg"),
+    ("PROD7777", "백팩3", 100000, "등으로 지는 양 어깨에 메는 가방", "가방", 1000, "backpack.jpg"),
+	("PROD8888", "숄더백3", 80000, "긴 끈이 달려서 한쪽 어깨에 메는 작은 가방", "가방", 1500, "shoulderbag.jpg"),
+    ("PROD9999", "핸드백3", 50000, "손에 들고 다니는 정도의 사이즈의 가방", "가방", 2000, "handbag.jpg");
+    
+select * from member;
